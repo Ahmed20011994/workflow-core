@@ -13,6 +13,10 @@ namespace WorkflowCore.Models
 
         public string Description { get; set; }
 
+        //public object Creators { get; set; }
+
+        public object Creators { get; set; }
+
         public string Reference { get; set; }
 
         public List<ExecutionPointer> ExecutionPointers { get; set; } = new List<ExecutionPointer>();

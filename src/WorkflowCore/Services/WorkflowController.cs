@@ -61,6 +61,7 @@ namespace WorkflowCore.Services
                 Version = def.Version,
                 Data = data,
                 Description = def.Description,
+                Creators = def.Creators,
                 NextExecution = 0,
                 CreateTime = DateTime.Now.ToUniversalTime(),
                 Status = WorkflowStatus.Runnable

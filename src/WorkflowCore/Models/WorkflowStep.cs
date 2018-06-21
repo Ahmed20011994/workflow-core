@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 using WorkflowCore.Interface;
+using WorkflowCore.Models.DefinitionStorage;
 
 namespace WorkflowCore.Models
 {
@@ -22,6 +23,14 @@ namespace WorkflowCore.Models
         public virtual List<DataMapping> Inputs { get; set; } = new List<DataMapping>();
 
         public virtual List<DataMapping> Outputs { get; set; } = new List<DataMapping>();
+
+        public virtual List<Notification> Notifications { get; set; } = new List<Notification>();
+
+        public virtual List<Validation> Validations { get; set; } = new List<Validation>();
+
+        public virtual List<Deviation> Deviations { get; set; } = new List<Deviation>();
+
+        public virtual List<Escalation> Escalations { get; set; } = new List<Escalation>();
 
         public virtual WorkflowErrorHandling? ErrorBehavior { get; set; }
 
@@ -65,7 +74,7 @@ namespace WorkflowCore.Models
 
         public virtual IStepBody ConstructBody(IServiceProvider serviceProvider)
         {
-            IStepBody body = (serviceProvider.GetService(BodyType) as IStepBody);
+            var body = (serviceProvider.GetService(BodyType) as IStepBody);
             if (body == null)
             {
                 var stepCtor = BodyType.GetConstructor(new Type[] { });

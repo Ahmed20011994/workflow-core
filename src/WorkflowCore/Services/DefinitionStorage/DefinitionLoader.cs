@@ -42,6 +42,9 @@ namespace WorkflowCore.Services.DefinitionStorage
             {
                 Id = source.Id,
                 Version = source.Version,
+                Creators = source.Creators,
+                Notifications = source.Notifications,
+                Escalations = source.Escalations,
                 Steps = ConvertSteps(source.Steps, dataType),
                 DefaultErrorBehavior = source.DefaultErrorBehavior,
                 DefaultErrorRetryInterval = source.DefaultErrorRetryInterval,
@@ -56,7 +59,7 @@ namespace WorkflowCore.Services.DefinitionStorage
         private List<WorkflowStep> ConvertSteps(ICollection<StepSourceV1> source, Type dataType)
         {
             var result = new List<WorkflowStep>();
-            int i = 0;
+            var i = 0;
             var stack = new Stack<StepSourceV1>(source.Reverse<StepSourceV1>());
             var parents = new List<StepSourceV1>();
             var compensatables = new List<StepSourceV1>();
@@ -68,6 +71,38 @@ namespace WorkflowCore.Services.DefinitionStorage
                 var stepType = FindType(nextStep.StepType);
                 var containerType = typeof(WorkflowStep<>).MakeGenericType(stepType);
                 var targetStep = (containerType.GetConstructor(new Type[] { }).Invoke(null) as WorkflowStep);
+
+                if ((nextStep.Escalations != null) && (nextStep.Escalations.Any()))
+                {
+                    if (targetStep != null)
+                    {
+                        targetStep.Escalations = nextStep.Escalations;
+                    }
+                }
+
+                if ((nextStep.Notifications != null) && (nextStep.Notifications.Any()))
+                {
+                    if (targetStep != null)
+                    {
+                        targetStep.Notifications = nextStep.Notifications;
+                    }
+                }
+
+                if ((nextStep.Validations != null) && (nextStep.Validations.Any()))
+                {
+                    if (targetStep != null)
+                    {
+                        targetStep.Validations = nextStep.Validations;
+                    }
+                }
+
+                if ((nextStep.Deviations != null) && (nextStep.Deviations.Any()))
+                {
+                    if (targetStep != null)
+                    {
+                        targetStep.Deviations = nextStep.Deviations;
+                    }
+                }
 
                 if (!string.IsNullOrEmpty(nextStep.CancelCondition))
                 {

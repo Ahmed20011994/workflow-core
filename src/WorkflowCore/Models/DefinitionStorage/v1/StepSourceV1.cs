@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace WorkflowCore.Models.DefinitionStorage.v1
 {
@@ -30,6 +29,12 @@ namespace WorkflowCore.Models.DefinitionStorage.v1
 
         public Dictionary<string, string> Outputs { get; set; } = new Dictionary<string, string>();
 
-        
+        public List<Notification> Notifications { get; set; }
+
+        public List<Validation> Validations { get; set; }
+
+        public List<Deviation> Deviations { get; set; }
+
+        public List<Escalation> Escalations { get; set; }
     }
 }

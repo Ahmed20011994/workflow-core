@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using WorkflowCore.Interface;
 using WorkflowCore.Models;
 using System.Text;
+using WorkflowCore;
 
 namespace ScratchPad
 {

@@ -1,0 +1,167 @@
+﻿{
+  //Things Covered:
+  //Role Assignment
+  //TAT
+  //Discrepencies
+  //Deviations
+  //Validations
+  //Notifications
+
+  //Not Covered yet:
+  //Maker/Checker
+
+  //Flow Type: DocumentVerification
+
+  "Id": "DocumentVerification",
+  "Version": 1,
+  "Description": "Workflow for document verification",
+  "DataType": "DocumentVerificationWorkflow.DataClass, DocumentVerificationWorkflow",
+  "Steps": [
+    {
+      "Id": "InitiateDocumentVerification",
+      "StepType": "DocumentVerificationWorkflow.PrintMessage, DocumentVerificationWorkflow",
+      "NextStepId": "RoleAssignment",
+      "Inputs": { "Message": "\"Kindly verify the following document: \" + Environment.NewLine + \"1.) CNIC \" + Environment.NewLine + \"2.) Birth certificate \"" },
+      "Notifications": {
+        "RecepientPhoneNumber": [ "+923332338328" ],
+        "RecepientEmailAddress": [ "syedahmedali2094@gmail.com" ],
+        "NotificationContent": "Sample notification",
+        "NotificationChannels": [ "email", "sms" ]
+      },
+      "TAT": 1
+    },
+    {
+      "Id": "RoleAssignment",
+      "StepType": "DocumentVerificationWorkflow.RoleAssignment, DocumentVerificationWorkflow",
+      "NextStepId": "ValidateDocuments",
+      "Inputs": {
+        "RoleCount": 2,
+        "Message": "\"Kindly assign the current task to the following roles: \" + Environment.NewLine + \"1.) Administrator (Id: 1) \" + Environment.NewLine + \"2.) Normal User (Id: 2)\""
+      },
+      "Notifications": {
+        "RecepientPhoneNumber": [ "+923332338328" ],
+        "RecepientEmailAddress": [ "syedahmedali2094@gmail.com" ],
+        "NotificationContent": "Sample notification",
+        "NotificationChannels": [ "email", "sms" ]
+      },
+      "TAT": 24
+    },
+    {
+      "Id": "DocumentsVerified",
+      "StepType": "WorkflowCore.Primitives.If, WorkflowCore",
+      "NextStepId": "DocumentsRejected",
+      "Inputs": { "Condition": "data.IsVerified ==  true" },
+      "Do": [
+        [
+          {
+            "Id": "do1",
+            "StepType": "DocumentVerificationWorkflow.PrintMessage, DocumentVerificationWorkflow",
+            "NextStepId": "EndOfFlow",
+            "Inputs": { "Message": "The documents have been verified" }
+          }
+        ]
+      ]
+    },
+    {
+      "Id": "ValidateDocuments",
+      //"StepType": "DocumentVerificationWorkflow.ValidateDocuments, DocumentVerificationWorkflow",
+      "StepType": "WorkflowCore.Primitives.If, WorkflowCore",
+      //"NextStepId": "DocumentsVerified",
+      "Roles": [
+        {
+          "Id": 1,
+          "Name": "Administrator",
+          "AllowedDiscrepencies": [
+            {
+              "Fieldname": "VerifiedDocumentList",
+              "ValidationFunctions": [
+                "ValidateDocumentList"
+              ]
+            }
+          ],
+          "AllowedDeviations": {
+            "StepNames": [
+              "DocumentVerificationWorkflow.DocumentsVerified"
+            ]
+          }
+        },
+        {
+          "Id": 2,
+          "Name": "Normal User",
+          "AllowedDiscrepencies": [],
+          "AllowedDeviations": {}
+        }
+      ],
+      "Validations": [
+        {
+          "Fieldname": "VerifiedDocumentList",
+          "ValidationFunctions": [
+            "ValidateDocumentList"
+          ]
+        }
+      ],
+      "Inputs": {
+        "CurrentRole": "Administrator (Id: 1)",
+        "VerifiedDocumentList": [ "CNIC", "Birth certificate" ]
+      },
+      "Outputs": {
+        "IsVerified": "step.Output"
+      },
+      "Discrepencies": [
+        {
+          "Fieldname": "VerifiedDocumentList",
+          "ValidationFunctions": [
+            "ValidateDocumentList"
+          ]
+        }
+      ],
+      "Deviation": {
+        "StepName": "EndOfFlow"
+      },
+      "Notifications": {
+        "RecepientPhoneNumber": [ "+923332338328" ],
+        "RecepientEmailAddress": [ "syedahmedali2094@gmail.com" ],
+        "NotificationContent": "Sample notification",
+        "NotificationChannels": [ "email", "sms" ]
+      },
+      "TAT": 24
+    },
+    {
+      "Id": "DocumentsVerified",
+      "StepType": "WorkflowCore.Primitives.If, WorkflowCore",
+      "NextStepId": "DocumentsRejected",
+      "Inputs": { "Condition": "data.IsVerified ==  true" },
+      "Do": [
+        [
+          {
+            "Id": "do1",
+            "StepType": "DocumentVerificationWorkflow.PrintMessage, DocumentVerificationWorkflow",
+            "NextStepId": "EndOfFlow",
+            "Inputs": { "Message": "The documents have been verified" }
+          }
+        ]
+      ]
+    },
+    {
+      "Id": "DocumentsRejected",
+      "StepType": "WorkflowCore.Primitives.If, WorkflowCore",
+      "NextStepId": "EndOfFlow",
+      "Inputs": { "Condition": "data.IsVerified ==  false" },
+      "Do": [
+        [
+          {
+            "Id": "do2",
+            "StepType": "DocumentVerificationWorkflow.PrintMessage, DocumentVerificationWorkflow",
+            "NextStepId": "EndOfFlow",
+            "Inputs": { "Message": "The documents have been rejected" }
+          }
+        ]
+      ]
+    },
+    {
+      "Id": "EndOfFlow",
+      "StepType": "DocumentVerificationWorkflow.PrintMessage, DocumentVerificationWorkflow",
+      "Inputs": { "Message": "The workflow has ended" }
+    }
+  ]
+}

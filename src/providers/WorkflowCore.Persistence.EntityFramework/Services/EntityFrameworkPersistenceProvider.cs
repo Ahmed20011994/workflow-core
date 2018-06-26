@@ -148,15 +148,21 @@ namespace WorkflowCore.Persistence.EntityFramework.Services
         {
             using (var context = ConstructDbContext())
             {
-                if (_canCreateDB && !_canMigrateDB)
+                //if (_canCreateDB && !_canMigrateDB)
+                //{
+                //    context.Database.EnsureCreated();
+                //    return;
+                //}
+
+                //if (_canMigrateDB)
+                //{
+                //    context.Database.Migrate();
+                //    return;
+                //}
+
+                if (_canCreateDB)
                 {
                     context.Database.EnsureCreated();
-                    return;
-                }
-
-                if (_canMigrateDB)
-                {
-                    context.Database.Migrate();
                     return;
                 }
             }

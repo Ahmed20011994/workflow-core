@@ -1,0 +1,118 @@
+﻿{
+  "Id": "HelloWorld",
+  "Version": 1,
+  "Description": "",
+  "DataType": "TestWorkflow.MyDataClass, TestWorkflow",
+  "Creators": [ 0, 1, 2, 3 ],
+  "Notifications": [
+    {
+      "Operation": "1",
+      "Recepients": [
+        {
+          "Name": "Ahmed",
+          "Channels": [ "sms", "email" ],
+          "EmailAddress": "syedahmedali2094@gmail.com",
+          "PhoneNumber": "03332338328"
+        }
+      ],
+      "Type": "EntryNotification"
+    }
+  ],
+  "Escalations": [
+    {
+      "Tat": "12h",
+      "StepId": "Bye"
+    }
+  ],
+  "Steps": [
+    {
+      "Id": "Hello",
+      "StepType": "TestWorkflow.HelloWorld, TestWorkflow",
+      "NextStepId": "Add",
+      "Escalations": [
+        {
+          "Tat": "12h",
+          "StepId": "Bye"
+        }
+      ],
+      "Validations": [
+        {
+          "Fields": [ "Name", "Address" ],
+          "Functions": [
+            {
+              "Name": "LengthCheck",
+              "Discrepants": [ 1, 2 ]
+            }
+          ]
+        }
+      ],
+      "Notifications": [
+        {
+          "Operation": "1",
+          "Recepients": [
+            {
+              "Name": "Ahmed",
+              "Channels": [ "sms", "email" ],
+              "EmailAddress": "syedahmedali2094@gmail.com",
+              "PhoneNumber": "03332338328"
+            }
+          ],
+          "Type": "EntryNotification"
+        }
+      ],
+      "Deviations": [
+        {
+          "StepId": "Bye",
+          "Roles": [ 0, 1 ]
+        }
+      ]
+    },
+    {
+      "Id": "Add",
+      "StepType": "TestWorkflow.AddNumbers, TestWorkflow",
+      "NextStepId": "MyIfStep1",
+      "Inputs": {
+        "Input1": 4,
+        "Input2": 1
+      },
+      "Outputs": {
+        "Value3": "step.Output"
+      }
+    },
+    {
+      "Id": "MyIfStep1",
+      "StepType": "WorkflowCore.Primitives.If, WorkflowCore",
+      "NextStepId": "MyIfStep2",
+      "Inputs": { "Condition": "data.Value3 > 5" },
+      "Do": [
+        [
+          {
+            "Id": "do1",
+            "StepType": "TestWorkflow.PrintMessage, TestWorkflow",
+            "NextStepId": "Bye",
+            "Inputs": { "Message": "\"The sum is greater than 5: \" + data.Value3.ToString()" }
+          }
+        ]
+      ]
+    },
+    {
+      "Id": "MyIfStep2",
+      "StepType": "WorkflowCore.Primitives.If, WorkflowCore",
+      "Inputs": { "Condition": "data.Value3 <= 5" },
+      "Do": [
+        [
+          {
+            "Id": "do2",
+            "StepType": "TestWorkflow.PrintMessage, TestWorkflow",
+            "NextStepId": "Bye",
+            "Inputs": { "Message": "\"The sum is less than 6: \" + data.Value3.ToString()" }
+          }
+        ]
+      ]
+    },
+    {
+      "Id": "Bye",
+      "StepType": "TestWorkflow.GoodbyeWorld, TestWorkflow"
+    }
+  ]
+}

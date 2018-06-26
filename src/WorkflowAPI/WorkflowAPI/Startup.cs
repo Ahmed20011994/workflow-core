@@ -27,7 +27,7 @@ namespace WorkflowAPI
 
             services.AddWorkflow(x =>
                 x.UseSqlServer(
-                    @"Server=tcp:workflowcore.database.windows.net,1433;Initial Catalog=WorkflowCore;Persist Security Info=False;User ID=ahmedali;Password=Optimist2094;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;Database=WorkflowCoreTest;Trusted_Connection=False;",
+                    @"Server=tcp:workflowcore.database.windows.net,1433;Initial Catalog=WorkflowCore;Persist Security Info=False;User ID=ahmedali;Password=Optimist2094;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;Database=WorkflowCore;Trusted_Connection=False;",
                     true, true));
 
             services.AddCors();

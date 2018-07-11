@@ -13,6 +13,12 @@ namespace WorkflowCore.Interface
     {
         Task<string> CreateNewWorkflow(WorkflowInstance workflow);
 
+        Task<Workflow> RegisterWorkflow(Workflow workflow);
+
+        Task<string> FetchFlowDefinition(string workflowName);
+
+        Task<List<Workflow>> FetchWorkFlows();
+
         Task PersistWorkflow(WorkflowInstance workflow);
 
         Task<IEnumerable<string>> GetRunnableInstances(DateTime asAt);

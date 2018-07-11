@@ -2,16 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.Extensions.DependencyInjection;
 using WorkflowCore.Interface;
 using WorkflowCore.Persistence.EntityFramework.Models;
 using WorkflowCore.Models;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using WorkflowCore.Persistence.EntityFramework.Interfaces;
-
 namespace WorkflowCore.Persistence.EntityFramework.Services
 {
     public class EntityFrameworkPersistenceProvider : IPersistenceProvider
@@ -19,6 +14,7 @@ namespace WorkflowCore.Persistence.EntityFramework.Services
         private readonly bool _canCreateDB;
         private readonly bool _canMigrateDB;
         private readonly IWorkflowDbContextFactory _contextFactory;
+        private readonly IWorkflowRegistry _registry;
 
         public EntityFrameworkPersistenceProvider(IWorkflowDbContextFactory contextFactory, bool canCreateDB, bool canMigrateDB)
         {
@@ -26,7 +22,7 @@ namespace WorkflowCore.Persistence.EntityFramework.Services
             _canCreateDB = canCreateDB;
             _canMigrateDB = canMigrateDB;
         }
-        
+
         public async Task<string> CreateEventSubscription(EventSubscription subscription)
         {
             using (var db = ConstructDbContext())
@@ -49,6 +45,49 @@ namespace WorkflowCore.Persistence.EntityFramework.Services
                 await db.SaveChangesAsync();
                 return workflow.Id;
             }
+        }
+
+        public async Task<Workflow> RegisterWorkflow(Workflow workflow)
+        {
+            using (var db = ConstructDbContext())
+            {
+                var persistable = workflow.ToPersistable();
+                var result = db.Set<PersistedRegistry>().Add(persistable);
+                await db.SaveChangesAsync();
+                return result.Entity.ToWorkflow();
+            }
+        }
+
+        public async Task<string> FetchFlowDefinition(string workflowName)
+        {
+            using (var db = ConstructDbContext())
+            {
+                var workFlow = await db.Set<PersistedRegistry>()
+                    .Where(p => p.WorkflowName.ToLower() == workflowName.ToLower())
+                    .FirstOrDefaultAsync();
+
+                return workFlow != null ? workFlow.Definition : string.Empty; 
+            }
+        }
+
+        public async Task<List<Workflow>> FetchWorkFlows()
+        {
+            var flows = new List<PersistedRegistry>();
+
+            using (var db = ConstructDbContext())
+            {
+                flows = await db.Set<PersistedRegistry>()
+                    .ToListAsync();
+            }
+
+            List<Workflow> result = new List<Workflow>();
+
+            foreach (var flow in flows)
+            {
+                result.Add(flow.ToWorkflow());
+            }
+
+            return result;
         }
 
         public async Task<IEnumerable<string>> GetRunnableInstances(DateTime asAt)
@@ -96,7 +135,7 @@ namespace WorkflowCore.Persistence.EntityFramework.Services
                 return result;
             }
         }
-        
+
         public async Task<WorkflowInstance> GetWorkflowInstance(string Id)
         {
             using (var db = ConstructDbContext())
@@ -143,7 +182,7 @@ namespace WorkflowCore.Persistence.EntityFramework.Services
                 await db.SaveChangesAsync();
             }
         }
-                
+
         public virtual void EnsureStoreExists()
         {
             using (var context = ConstructDbContext())
@@ -289,11 +328,10 @@ namespace WorkflowCore.Persistence.EntityFramework.Services
                 }
             }
         }
-        
+
         private WorkflowDbContext ConstructDbContext()
         {
             return _contextFactory.Build();
         }
-
     }
 }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using WorkflowCore.Persistence.EntityFramework.Models;
 using WorkflowCore.Persistence.EntityFramework.Services;
@@ -62,6 +58,12 @@ namespace WorkflowCore.Persistence.SqlServer
         {
             builder.ToTable("Event", "wfc");
             builder.Property(x => x.PersistenceId).UseSqlServerIdentityColumn();
+        }
+
+        protected override void ConfigureRegistryStorage(EntityTypeBuilder<PersistedRegistry> builder)
+        {
+            builder.ToTable("Registry", "wfc");
+            builder.Property(x => x.WorkflowId).UseSqlServerIdentityColumn();
         }
     }
 }

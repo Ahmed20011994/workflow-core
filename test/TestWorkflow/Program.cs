@@ -15,12 +15,16 @@ namespace TestWorkflow
 
             //start the workflow host
             var host = serviceProvider.GetService<IWorkflowHost>();
+            var controller = serviceProvider.GetService<IWorkflowController>();
             var loader = serviceProvider.GetService<IDefinitionLoader>();
-            var str = Resources.HelloWorld; //Encoding.UTF8.GetString(ScratchPad.Properties.Resources.HelloWorld);
+            var str = Resources.HelloWorld;
+
+            //var definition = controller.GetWorkflowFromRegistry("testworkflow").Result;
+
+            //loader.LoadDefinition(JsonConvert.DeserializeObject(definition).ToString());
 
             loader.LoadDefinition(str);
 
-            //host.RegisterWorkflow<HelloWorldWorkflow>();
             host.Start();
 
             host.StartWorkflow("HelloWorld", 1, new MyDataClass());

@@ -5,11 +5,9 @@ using System.Linq;
 using System.Linq.Dynamic.Core;
 using System.Linq.Expressions;
 using System.Reflection;
-using System.Text;
 using WorkflowCore.Interface;
 using WorkflowCore.Models;
 using WorkflowCore.Primitives;
-using WorkflowCore.Models.DefinitionStorage;
 using WorkflowCore.Models.DefinitionStorage.v1;
 using WorkflowCore.Exceptions;
 
@@ -29,10 +27,11 @@ namespace WorkflowCore.Services.DefinitionStorage
             var source = JsonConvert.DeserializeObject<DefinitionSourceV1>(json);
             var def = Convert(source);
             _registry.RegisterWorkflow(def);
+
             return def;
         }
 
-        private WorkflowDefinition Convert(DefinitionSourceV1 source)
+        public WorkflowDefinition Convert(DefinitionSourceV1 source)
         {
             var dataType = typeof(object);
             if (!string.IsNullOrEmpty(source.DataType))

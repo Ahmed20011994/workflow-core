@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using WorkflowCore.Interface;
-using WorkflowCore.Models;
 using WorkflowCore.Persistence.EntityFramework.Models;
 
 namespace WorkflowCore.Persistence.EntityFramework.Services
@@ -20,6 +12,7 @@ namespace WorkflowCore.Persistence.EntityFramework.Services
         protected abstract void ConfigureExetensionAttributeStorage(EntityTypeBuilder<PersistedExtensionAttribute> builder);
         protected abstract void ConfigureSubscriptionStorage(EntityTypeBuilder<PersistedSubscription> builder);
         protected abstract void ConfigureEventStorage(EntityTypeBuilder<PersistedEvent> builder);
+        protected abstract void ConfigureRegistryStorage(EntityTypeBuilder<PersistedRegistry> builder);
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -32,6 +25,7 @@ namespace WorkflowCore.Persistence.EntityFramework.Services
             var executionPointers = modelBuilder.Entity<PersistedExecutionPointer>();
             var executionErrors = modelBuilder.Entity<PersistedExecutionError>();
             var extensionAttributes = modelBuilder.Entity<PersistedExtensionAttribute>();
+            var registry = modelBuilder.Entity<PersistedRegistry>();
 
             var subscriptions = modelBuilder.Entity<PersistedSubscription>();
             subscriptions.HasIndex(x => x.SubscriptionId).IsUnique();
@@ -50,6 +44,7 @@ namespace WorkflowCore.Persistence.EntityFramework.Services
             ConfigureExetensionAttributeStorage(extensionAttributes);
             ConfigureSubscriptionStorage(subscriptions);
             ConfigureEventStorage(events);
+            ConfigureRegistryStorage(registry);
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

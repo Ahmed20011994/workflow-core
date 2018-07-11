@@ -191,6 +191,21 @@ namespace WorkflowCore.Services
                 _errors.AddRange(errors);
             }
         }
+
+        public Task<Workflow> RegisterWorkflow(Workflow workflow)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<string> FetchFlowDefinition(string workflowName)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<Workflow>> FetchWorkFlows()
+        {
+            throw new NotImplementedException();
+        }
     }
 
     #pragma warning restore CS1998 // Async method lacks 'await' operators and will run synchronously

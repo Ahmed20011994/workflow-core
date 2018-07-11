@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using WorkflowCore.Interface;
 using WorkflowCore.Models;
+using Microsoft.Extensions.Logging;
 
 namespace WorkflowCore.Primitives
 {
@@ -36,6 +37,6 @@ namespace WorkflowCore.Primitives
             }
 
             return ExecutionResult.Persist(context.PersistenceData);
-        }        
+        }
     }
 }

@@ -2,8 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using WorkflowCore.Models;
+using WorkflowCore.Models.DefinitionStorage.v1;
 using WorkflowCore.Persistence.EntityFramework.Models;
 
 namespace WorkflowCore.Persistence.EntityFramework
@@ -14,8 +14,8 @@ namespace WorkflowCore.Persistence.EntityFramework
 
         internal static PersistedWorkflow ToPersistable(this WorkflowInstance instance, PersistedWorkflow persistable = null)
         {
-            if (persistable == null)            
-                persistable = new PersistedWorkflow();                        
+            if (persistable == null)
+                persistable = new PersistedWorkflow();
 
             persistable.Data = JsonConvert.SerializeObject(instance.Data, SerializerSettings);
             persistable.Description = instance.Description;
@@ -27,18 +27,18 @@ namespace WorkflowCore.Persistence.EntityFramework
             persistable.Status = instance.Status;
             persistable.CreateTime = instance.CreateTime;
             persistable.CompleteTime = instance.CompleteTime;
-            
+
             foreach (var ep in instance.ExecutionPointers)
             {
                 var persistedEP = persistable.ExecutionPointers.FirstOrDefault(x => x.Id == ep.Id);
-                
+
                 if (persistedEP == null)
                 {
                     persistedEP = new PersistedExecutionPointer();
                     persistable.ExecutionPointers.Add(persistedEP);
                 }
-                 
-                persistedEP.Id = ep.Id ?? Guid.NewGuid().ToString(); 
+
+                persistedEP.Id = ep.Id ?? Guid.NewGuid().ToString();
                 persistedEP.StepId = ep.StepId;
                 persistedEP.Active = ep.Active;
                 persistedEP.SleepUntil = ep.SleepUntil;
@@ -84,7 +84,7 @@ namespace WorkflowCore.Persistence.EntityFramework
 
         internal static PersistedExecutionError ToPersistable(this ExecutionError instance)
         {
-            var result = new PersistedExecutionError();            
+            var result = new PersistedExecutionError();
             result.ErrorTime = instance.ErrorTime;
             result.Message = instance.Message;
             result.ExecutionPointerId = instance.ExecutionPointerId;
@@ -95,7 +95,7 @@ namespace WorkflowCore.Persistence.EntityFramework
 
         internal static PersistedSubscription ToPersistable(this EventSubscription instance)
         {
-            PersistedSubscription result = new PersistedSubscription();            
+            PersistedSubscription result = new PersistedSubscription();
             result.SubscriptionId = new Guid(instance.Id);
             result.EventKey = instance.EventKey;
             result.EventName = instance.EventName;
@@ -116,6 +116,32 @@ namespace WorkflowCore.Persistence.EntityFramework
             result.IsProcessed = instance.IsProcessed;
             result.EventData = JsonConvert.SerializeObject(instance.EventData, SerializerSettings);
 
+            return result;
+        }
+
+        internal static PersistedRegistry ToPersistable(this Workflow instance)
+        {
+            PersistedRegistry result = new PersistedRegistry
+            {
+                WorkflowName = instance.WorkflowName,
+                Description = instance.Description,
+                Definition = JsonConvert.SerializeObject(instance.Definition, SerializerSettings),
+                CreationTime = DateTime.SpecifyKind(instance.CreationTime, DateTimeKind.Utc)
+            };
+
+            return result;
+        }
+
+        internal static Workflow ToWorkflow(this PersistedRegistry instance)
+        {
+            Workflow result = new Workflow
+            {
+                WorkflowId = instance.WorkflowId.ToString(),
+                WorkflowName = instance.WorkflowName,
+                CreationTime = instance.CreationTime,
+                Definition = JsonConvert.DeserializeObject<DefinitionSourceV1>(instance.Definition),
+                Description = instance.Description
+            };
             return result;
         }
 

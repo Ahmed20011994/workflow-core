@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using WorkflowCore.Persistence.EntityFramework.Interfaces;
+﻿using WorkflowCore.Persistence.EntityFramework.Interfaces;
 using WorkflowCore.Persistence.EntityFramework.Services;
 
 namespace WorkflowCore.Persistence.SqlServer

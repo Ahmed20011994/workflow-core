@@ -209,5 +209,20 @@ namespace WorkflowCore.Persistence.MongoDB.Services
             if (errors.Any())
                 await ExecutionErrors.InsertManyAsync(errors);
         }
+
+        public Task<Workflow> RegisterWorkflow(Workflow workflow)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<string> FetchFlowDefinition(string workflowName)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<Workflow>> FetchWorkFlows()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

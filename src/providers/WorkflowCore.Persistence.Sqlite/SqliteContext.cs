@@ -54,5 +54,10 @@ namespace WorkflowCore.Persistence.Sqlite
         {
             builder.ToTable("Event");
         }
+
+        protected override void ConfigureRegistryStorage(EntityTypeBuilder<PersistedRegistry> builder)
+        {
+            builder.ToTable("Registry");
+        }
     }
 }

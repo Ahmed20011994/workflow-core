@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using WorkflowCore.Models.DefinitionStorage;
 
-
 namespace WorkflowCore.Models
 {
-    public class   WorkflowDefinition
+    public class WorkflowDefinition
     {
         public string Id { get; set; }
 

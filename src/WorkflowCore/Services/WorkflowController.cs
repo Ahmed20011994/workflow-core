@@ -1,12 +1,13 @@
 ﻿using System;
-using System.Linq;
 using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using WorkflowCore.Exceptions;
 using WorkflowCore.Interface;
 using WorkflowCore.Models;
+using WorkflowCore.Models.DefinitionStorage.v1;
 
 namespace WorkflowCore.Services
 {
@@ -183,6 +184,28 @@ namespace WorkflowCore.Services
         {
             TWorkflow wf = new TWorkflow();
             _registry.RegisterWorkflow<TData>(wf);
+        }
+
+        public async Task<Workflow> AddWorkflowToRegistry(string workflowName, string definition, string description = null)
+        {
+            var wf = new Workflow
+            {
+                WorkflowName = workflowName,
+                Description = description,
+                Definition = JsonConvert.DeserializeObject<DefinitionSourceV1>(JsonConvert.DeserializeObject(definition).ToString()),
+                CreationTime = DateTime.Now
+            };
+
+            var workflow = await _persistenceStore.RegisterWorkflow(wf);
+
+            return workflow;
+        }
+
+        public async Task<string> GetWorkflowFromRegistry(string workflowName)
+        {
+            string definition = await _persistenceStore.FetchFlowDefinition(workflowName);
+
+            return definition ?? string.Empty;
         }
     }
 }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using WorkflowCore.Interface;
-using WorkflowCore.Models;
+﻿using WorkflowCore.Interface;
 using WorkflowCore.Sample01.Steps;
 
 namespace WorkflowCore.Sample01

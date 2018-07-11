@@ -26,9 +26,10 @@
   ],
   "Steps": [
     {
-      "Id": "Hello",
+      "Id": 0,
+      "Name": "Hello",
       "StepType": "TestWorkflow.HelloWorld, TestWorkflow",
-      "NextStepId": "Add",
+      "NextStepId": 1,
       "Escalations": [
         {
           "Tat": "12h",
@@ -68,9 +69,10 @@
       ]
     },
     {
-      "Id": "Add",
+      "Id": 1,
+      "Name": "Add",
       "StepType": "TestWorkflow.AddNumbers, TestWorkflow",
-      "NextStepId": "MyIfStep1",
+      "NextStepId": 2,
       "Inputs": {
         "Input1": 4,
         "Input2": 1
@@ -80,38 +82,43 @@
       }
     },
     {
-      "Id": "MyIfStep1",
+      "Id": 2,
+      "Name": "MyIfStep1",
       "StepType": "WorkflowCore.Primitives.If, WorkflowCore",
-      "NextStepId": "MyIfStep2",
+      "NextStepId": 4,
       "Inputs": { "Condition": "data.Value3 > 5" },
       "Do": [
         [
           {
-            "Id": "do1",
+            "Id": 3,
+            "Name": "IfStep1PrintMessage",
             "StepType": "TestWorkflow.PrintMessage, TestWorkflow",
-            "NextStepId": "Bye",
+            "NextStepId": 6,
             "Inputs": { "Message": "\"The sum is greater than 5: \" + data.Value3.ToString()" }
           }
         ]
       ]
     },
     {
-      "Id": "MyIfStep2",
+      "Id": 4,
+      "Name": "MyIfStep2",
       "StepType": "WorkflowCore.Primitives.If, WorkflowCore",
       "Inputs": { "Condition": "data.Value3 <= 5" },
       "Do": [
         [
           {
-            "Id": "do2",
+            "Id": 5,
+            "Name": "IfStep2PrintMessage",
             "StepType": "TestWorkflow.PrintMessage, TestWorkflow",
-            "NextStepId": "Bye",
+            "NextStepId": 6,
             "Inputs": { "Message": "\"The sum is less than 6: \" + data.Value3.ToString()" }
           }
         ]
       ]
     },
     {
-      "Id": "Bye",
+      "Id": 6,
+      "Name": "Bye",
       "StepType": "TestWorkflow.GoodbyeWorld, TestWorkflow"
     }
   ]

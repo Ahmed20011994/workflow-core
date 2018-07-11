@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
+using WorkflowCore.Models;
 
 namespace WorkflowCore.Interface
 {
@@ -36,6 +35,10 @@ namespace WorkflowCore.Interface
         /// <param name="workflowId"></param>
         /// <returns></returns>
         Task<bool> TerminateWorkflow(string workflowId);
+
+        Task<Workflow> AddWorkflowToRegistry(string workflowName, string definition, string description = null);
+
+        Task<string> GetWorkflowFromRegistry(string workflowName);
 
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Microsoft.Extensions.Logging;
 using WorkflowCore.Exceptions;
 using WorkflowCore.Interface;
 using WorkflowCore.Models;
@@ -29,6 +30,6 @@ namespace WorkflowCore.Primitives
             }
 
             throw new CorruptPersistenceDataException();
-        }        
+        }
     }
 }

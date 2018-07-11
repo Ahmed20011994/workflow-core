@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using WorkflowAPI.Helpers.Extensions;
 using WorkflowCore;
+using WorkflowCore.Interface;
 
 namespace WorkflowAPI
 {
@@ -47,8 +48,18 @@ namespace WorkflowAPI
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            loggerFactory.AddFile("Workflows/SampleWorkflow.txt");
+
+            var host = app.ApplicationServices.GetService<IWorkflowHost>();
+
+            host.Start();
+
+            app.ApplicationServices.GetService<IWorkflowController>();
+
+            app.ApplicationServices.GetService<IDefinitionLoader>(); 
+
             app.UseCors(
                 options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()
             );

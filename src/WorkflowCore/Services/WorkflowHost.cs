@@ -138,5 +138,15 @@ namespace WorkflowCore.Services
             if (!_shutdown)
                 Stop();
         }
+
+        public Task<Workflow> AddWorkflowToRegistry(string workflowName, string definition, string description = null)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<string> GetWorkflowFromRegistry(string workflowName)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -60,6 +60,11 @@ namespace WorkflowCore.Persistence.PostgreSQL
             builder.ToTable("Event", "wfc");
             builder.Property(x => x.PersistenceId).ValueGeneratedOnAdd();
         }
+
+        protected override void ConfigureRegistryStorage(EntityTypeBuilder<PersistedRegistry> builder)
+        {
+            builder.ToTable("Registry", "wfc");
+            builder.Property(x => x.WorkflowId).ValueGeneratedOnAdd();
+        }
     }
 }
-

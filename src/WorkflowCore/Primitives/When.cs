@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using WorkflowCore.Exceptions;
 using WorkflowCore.Interface;
 using WorkflowCore.Models;
+using Microsoft.Extensions.Logging;
 
 namespace WorkflowCore.Primitives
 {
@@ -45,7 +46,7 @@ namespace WorkflowCore.Primitives
             }
 
             throw new CorruptPersistenceDataException();
-        }        
+        }
 
         private object GetSwitchOutcome(IStepExecutionContext context)
         {

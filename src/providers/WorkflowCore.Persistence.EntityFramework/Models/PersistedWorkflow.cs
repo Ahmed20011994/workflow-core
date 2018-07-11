@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 using WorkflowCore.Models;
 
 namespace WorkflowCore.Persistence.EntityFramework.Models
-{    
+{
     public class PersistedWorkflow
     {
         [Key]
@@ -29,7 +26,6 @@ namespace WorkflowCore.Persistence.EntityFramework.Models
 
         public virtual List<PersistedExecutionPointer> ExecutionPointers { get; set; } = new List<PersistedExecutionPointer>();
 
-        //[Index]
         public long? NextExecution { get; set; }
 
         public string Data { get; set; }

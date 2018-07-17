@@ -1,15 +1,9 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using MongoDB.Driver;
 //using RabbitMQ.Client;
 using StackExchange.Redis;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using WorkflowCore.Interface;
-using WorkflowCore.Persistence.MongoDB.Services;
-using WorkflowCore.Services;
 
 namespace WorkflowCore.Sample04
 {
@@ -26,10 +20,18 @@ namespace WorkflowCore.Sample04
 
             var initialData = new MyDataClass();
             var workflowId = host.StartWorkflow("EventSampleWorkflow", 1, initialData).Result;
-            
+
+            var temp = new MyDataClass()
+            {
+                StrValue1 = "something",
+                StrValue2 = "somethingElse"
+            };
+
             Console.WriteLine("Enter value to publish");
             string value = Console.ReadLine();
-            host.PublishEvent("MyEvent", workflowId, value);
+            //host.PublishEvent("MyEvent", workflowId, value);
+
+            host.PublishEvent("MyEvent", workflowId, temp);
 
             Console.ReadLine();
             host.Stop();

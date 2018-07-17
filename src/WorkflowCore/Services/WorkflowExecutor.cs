@@ -181,9 +181,45 @@ namespace WorkflowCore.Services
             foreach (var output in step.Outputs)
             {
                 var member = (output.Target.Body as MemberExpression);
-                var resolvedValue = output.Source.Compile().DynamicInvoke(body);
-                var data = workflow.Data;
-                data.GetType().GetProperty(member.Member.Name).SetValue(data, resolvedValue);
+                if(member != null) // to resolve a field or property
+                {
+                    var list = new List<String>()
+                    {
+                        "system.int64", "system.int32", "system.string", "system.boolean"
+                    };
+                    var resolvedValue = output.Source.Compile().DynamicInvoke(body);
+
+                    Type resolvedValueType = resolvedValue.GetType();
+
+                    var type = resolvedValueType.FullName.ToLower();
+
+                    if (!list.Contains(type))
+                    {
+                        var data = workflow.Data;
+                        var value = resolvedValue.GetType().GetProperty(member.Member.Name).GetValue(resolvedValue, null);
+                        data.GetType().GetProperty(member.Member.Name).SetValue(data, value);
+                    }
+
+                    else if (list.Contains(type))
+                    {
+                        var data = workflow.Data;
+                        data.GetType().GetProperty(member.Member.Name).SetValue(data, resolvedValue);
+                    }
+                }
+
+                if (member == null) // to resolve an object
+                {
+                    var resolvedValue = output.Source.Compile().DynamicInvoke(body);
+                    var data = workflow.Data;
+
+                    Type dataType = data.GetType();
+
+                    foreach (PropertyInfo propertyInfo in dataType.GetProperties())
+                    {
+                        var value = resolvedValue.GetType().GetProperty(propertyInfo.Name).GetValue(resolvedValue, null);
+                        data.GetType().GetProperty(propertyInfo.Name).SetValue(data, value);
+                    }
+                }
             }
         }
 

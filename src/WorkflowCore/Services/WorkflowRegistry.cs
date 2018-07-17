@@ -59,7 +59,8 @@ namespace WorkflowCore.Services
         {
             if (_registry.Any(x => x.Item1 == definition.Id && x.Item2 == definition.Version))
             {
-                throw new InvalidOperationException($"Workflow {definition.Id} version {definition.Version} is already registered");
+                return;
+                //throw new InvalidOperationException($"Workflow {definition.Id} version {definition.Version} is already registered");
             }
 
             _registry.Add(new Tuple<string, int, WorkflowDefinition>(definition.Id, definition.Version, definition));

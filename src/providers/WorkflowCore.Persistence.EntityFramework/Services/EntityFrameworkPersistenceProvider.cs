@@ -58,6 +58,17 @@ namespace WorkflowCore.Persistence.EntityFramework.Services
             }
         }
 
+        public async Task<InputValidation> PersistValidation(InputValidation validation)
+        {
+            using (var db = ConstructDbContext())
+            {
+                var persistable = validation.ToPersistable();
+                var result = db.Set<PersistedValidation>().Add(persistable);
+                await db.SaveChangesAsync();
+                return result.Entity.ToValidation();
+            }
+        }
+
         public async Task<string> FetchFlowDefinition(string workflowName)
         {
             using (var db = ConstructDbContext())

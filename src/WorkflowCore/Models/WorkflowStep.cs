@@ -26,7 +26,7 @@ namespace WorkflowCore.Models
 
         public virtual List<Notification> Notifications { get; set; } = new List<Notification>();
 
-        public virtual List<Validation> Validations { get; set; } = new List<Validation>();
+        public virtual List<DefinitionStorage.Validation> Validations { get; set; } = new List<DefinitionStorage.Validation>();
 
         public virtual List<Deviation> Deviations { get; set; } = new List<Deviation>();
 

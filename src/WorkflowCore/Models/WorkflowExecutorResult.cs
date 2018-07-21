@@ -6,5 +6,6 @@ namespace WorkflowCore.Models
     {
         public List<EventSubscription> Subscriptions { get; set; } = new List<EventSubscription>();
         public List<ExecutionError> Errors { get; set; } = new List<ExecutionError>();
+        public bool IsValidated { get; set; }
     }
 }

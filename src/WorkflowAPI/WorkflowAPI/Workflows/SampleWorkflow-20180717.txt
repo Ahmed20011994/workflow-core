@@ -1,0 +1,455 @@
+2018-07-17T16:38:36.8781718+05:00  [INF] Starting backgroud tasks (69ed07b0)
+2018-07-17T16:38:36.9170763+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:38:37.6159803+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:38:37.9115651+05:00 0HLFBR7B24PFQ:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:51342/api/values   (ca22a1cb)
+2018-07-17T16:38:37.9117447+05:00 0HLFBR7B24PFR:00000001 [INF] Request starting HTTP/1.1 DEBUG http://localhost:51342/  0 (ca22a1cb)
+2018-07-17T16:38:37.9700745+05:00 0HLFBR7B24PFR:00000001 [INF] Request finished in 131.3909ms 200  (791a596a)
+2018-07-17T16:38:38.2560635+05:00 0HLFBR7B24PFQ:00000001 [INF] Request finished in 414.9269ms 404  (791a596a)
+2018-07-17T16:38:46.9010906+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:38:47.1725436+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:38:54.1926533+05:00 0HLFBR7B24PFR:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:51342/api/v1/registry   (ca22a1cb)
+2018-07-17T16:38:54.3747343+05:00 0HLFBR7B24PFR:00000002 [INF] Executing action method "WorkflowAPI.Controllers.RegistryController.Get (WorkflowAPI)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-07-17T16:38:55.0787426+05:00 0HLFBR7B24PFR:00000002 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2018-07-17T16:38:55.1610827+05:00 0HLFBR7B24PFR:00000002 [INF] Executed action "WorkflowAPI.Controllers.RegistryController.Get (WorkflowAPI)" in 873.9686ms (afa2e885)
+2018-07-17T16:38:55.1666537+05:00 0HLFBR7B24PFR:00000002 [INF] Request finished in 973.0448ms 200 application/json; charset=utf-8 (791a596a)
+2018-07-17T16:38:56.9126819+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:38:57.3956475+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:39:06.9005124+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:39:07.1764174+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:39:16.9033197+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:39:17.2071493+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:39:26.8998262+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:39:27.1595244+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:39:36.9003412+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:39:37.1668908+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:39:46.9064926+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:39:47.1990997+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:39:56.9032856+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:39:57.1847176+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:40:06.9023319+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:40:07.2025139+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:40:16.9021478+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:40:17.1882685+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:40:26.9003338+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:40:27.1843522+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:40:36.8991269+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:40:37.1877499+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:40:46.9114165+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:40:47.1933259+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:40:53.8486289+05:00 0HLFBR7B24PFS:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:51342/api/v1/registry   (ca22a1cb)
+2018-07-17T16:40:53.8849008+05:00 0HLFBR7B24PFS:00000001 [INF] Executing action method "WorkflowAPI.Controllers.RegistryController.Get (WorkflowAPI)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-07-17T16:40:54.1701765+05:00 0HLFBR7B24PFS:00000001 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2018-07-17T16:40:54.1732175+05:00 0HLFBR7B24PFS:00000001 [INF] Executed action "WorkflowAPI.Controllers.RegistryController.Get (WorkflowAPI)" in 320.771ms (afa2e885)
+2018-07-17T16:40:54.1764239+05:00 0HLFBR7B24PFS:00000001 [INF] Request finished in 328.197ms 200 application/json; charset=utf-8 (791a596a)
+2018-07-17T16:40:56.9001117+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:40:57.1830563+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:41:06.8999874+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:41:07.1739114+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:41:16.8996047+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:41:17.1646533+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:41:18.1305395+05:00 0HLFBR7B24PFS:00000002 [INF] Request starting HTTP/1.1 POST http://localhost:51342/api/v1/registry application/json 2264 (ca22a1cb)
+2018-07-17T16:41:18.2525259+05:00 0HLFBR7B24PFS:00000002 [INF] Executing action method "WorkflowAPI.Controllers.RegistryController.Post (WorkflowAPI)" with arguments (["SampleWorkflow", "SampleWorkflow", "{
+  \"Id\": \"SampleWorkflow\",
+  \"Version\": 1,
+  \"Description\": \"\",
+  \"DataType\": \"WorkflowAPI.Data.MyDataClass, WorkflowAPI\",
+  \"Creators\": [
+    0,
+    1,
+    2,
+    3
+  ],
+  \"Notifications\": [
+    {
+      \"Operation\": \"1\",
+      \"Recepients\": [
+        {
+          \"Name\": \"Ahmed\",
+          \"Channels\": [
+            \"sms\",
+            \"email\"
+          ],
+          \"EmailAddress\": \"syedahmedali2094@gmail.com\",
+          \"PhoneNumber\": \"03332338328\"
+        }
+      ],
+      \"Type\": \"EntryNotification\"
+    }
+  ],
+  \"Escalations\": [
+    {
+      \"Tat\": \"12h\",
+      \"StepId\": \"Bye\"
+    }
+  ],
+  \"Steps\": [
+    {
+      \"Id\": \"HelloWorld\",
+      \"Name\": \"HelloWorld\",
+      \"StepType\": \"WorkflowAPI.Steps.HelloWorld, WorkflowAPI\",
+      \"NextStepId\": \"RegistrationWaitStep\",
+      \"Escalations\": [
+        {
+          \"Tat\": \"12h\",
+          \"StepId\": \"Bye\"
+        }
+      ],
+      \"Notifications\": [
+        {
+          \"Operation\": \"1\",
+          \"Recepients\": [
+            {
+              \"Name\": \"Ahmed\",
+              \"Channels\": [
+                \"sms\",
+                \"email\"
+              ],
+              \"EmailAddress\": \"syedahmedali2094@gmail.com\",
+              \"PhoneNumber\": \"03332338328\"
+            }
+          ],
+          \"Type\": \"EntryNotification\"
+        }
+      ],
+      \"Deviations\": [
+        {
+          \"StepId\": \"Bye\",
+          \"Roles\": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      \"Id\": \"RegistrationWaitStep\",
+      \"Name\": \"Registration\",
+      \"StepType\": \"WorkflowCore.Primitives.WaitFor, WorkflowCore\",
+      \"NextStepId\": \"PrintMessage\",
+      \"Inputs\": {
+        \"EventName\": \"\\"Registration\\"\",
+        \"EventKey\": \"context.Workflow.Id\",
+        \"EffectiveDate\": \"DateTime.Now\"
+      },
+      \"Outputs\": {
+        \"Name\": \"step.EventData\",
+        \"EmailAddress\": \"step.EventData\"
+      },
+      \"Validations\": [
+        {
+          \"Fields\": [
+            \"Name\",
+            \"Address\"
+          ],
+          \"DataValidations\": [
+            {
+              \"Name\": \"Required\",
+              \"ErrorCode\": \"0\",
+              \"Discrepants\": [
+                1,
+                2
+              ]
+            },
+            {
+              \"Name\": \"RegExp\",
+              \"Input\": \"/^[a-zA-Z]{7}$/\",
+              \"ErrorCode\": \"1\",
+              \"Discrepants\": [
+                1,
+                2
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      \"Id\": \"PrintMessage\",
+      \"Name\": \"PrintMessage\",
+      \"StepType\": \"WorkflowAPI.Steps.PrintMessage, WorkflowAPI\",
+      \"NextStepId\": \"GoodbyeWorld\",
+      \"Inputs\": {
+        \"Message\": \" \\"Provided name is: \\" + data.Name + \\" and the provided email address is: \\" + data.EmailAddress\"
+      }
+    },
+    {
+      \"Id\": \"GoodbyeWorld\",
+      \"Name\": \"Bye\",
+      \"StepType\": \"WorkflowAPI.Steps.GoodbyeWorld, WorkflowAPI\"
+    }
+  ]
+}"]) - ModelState is Valid (ba7f4ac2)
+2018-07-17T16:41:19.2317494+05:00 0HLFBR7B24PFS:00000002 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2018-07-17T16:41:19.2454351+05:00 0HLFBR7B24PFS:00000002 [INF] Executed action "WorkflowAPI.Controllers.RegistryController.Post (WorkflowAPI)" in 1068.1755ms (afa2e885)
+2018-07-17T16:41:19.2507319+05:00 0HLFBR7B24PFS:00000002 [INF] Request finished in 1120.6527ms 201 application/json; charset=utf-8 (791a596a)
+2018-07-17T16:41:24.5717040+05:00 0HLFBR7B24PFS:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:51342/api/v1/registry   (ca22a1cb)
+2018-07-17T16:41:24.6067272+05:00 0HLFBR7B24PFS:00000003 [INF] Executing action method "WorkflowAPI.Controllers.RegistryController.Get (WorkflowAPI)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-07-17T16:41:25.1450600+05:00 0HLFBR7B24PFS:00000003 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2018-07-17T16:41:25.1503761+05:00 0HLFBR7B24PFS:00000003 [INF] Executed action "WorkflowAPI.Controllers.RegistryController.Get (WorkflowAPI)" in 573.6679ms (afa2e885)
+2018-07-17T16:41:25.1551990+05:00 0HLFBR7B24PFS:00000003 [INF] Request finished in 581.4124ms 200 application/json; charset=utf-8 (791a596a)
+2018-07-17T16:41:26.9029734+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:41:27.1723677+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:41:36.9074666+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:41:37.2021922+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:41:46.8987114+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:41:47.1714730+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:41:56.8995360+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:41:57.1697792+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:42:06.9018478+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:42:07.1881423+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:42:16.8990577+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:42:17.1627065+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:42:26.8991836+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:42:27.1686479+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:42:36.9024293+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:42:37.1848529+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:42:46.9053645+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:42:47.1903159+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:42:56.9008524+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:42:57.1805632+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:43:06.8991408+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:43:07.1806545+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:43:16.9006920+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:43:17.1868812+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:43:26.9035542+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:43:27.1893093+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:43:36.8982031+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:43:37.1611291+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:43:46.9413533+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:43:47.2235209+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:43:56.9039425+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:43:57.1979218+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:44:06.9087055+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:44:07.1982467+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:44:16.8991266+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:44:17.1903946+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:44:26.9076267+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:44:27.2048588+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:44:36.9025914+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:44:37.2134786+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:44:46.9016201+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:44:47.2674732+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:44:56.8985647+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:44:57.1606380+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:45:06.9030116+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:45:07.1644642+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:45:16.9050283+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:45:17.1958012+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:45:26.9005135+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:45:27.2337916+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:45:36.9039310+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:45:37.2088644+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:45:46.8999653+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:45:47.1607033+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:45:56.8983709+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:45:57.1655757+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:46:06.9023444+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:46:07.1738173+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:46:16.8986571+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:46:17.1659624+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:46:26.9035222+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:46:27.6267450+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:46:36.9048853+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:46:37.1969178+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:46:46.9030180+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:46:47.1723310+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:46:56.9051085+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:46:57.1913799+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:46:59.9567774+05:00 0HLFBR7B24PFT:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:51342/api/v1/workflow/StartWorkflow application/json 105 (ca22a1cb)
+2018-07-17T16:47:00.0248055+05:00 0HLFBR7B24PFT:00000001 [INF] Executing action method "WorkflowAPI.Controllers.WorkflowController.StartWorkflow (WorkflowAPI)" with arguments (["WorkflowAPI.Models.Workflow"]) - ModelState is Valid (ba7f4ac2)
+2018-07-17T16:47:03.2613482+05:00 0HLFBR7B24PFT:00000001 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2018-07-17T16:47:03.2652292+05:00 0HLFBR7B24PFT:00000001 [INF] Executed action "WorkflowAPI.Controllers.WorkflowController.StartWorkflow (WorkflowAPI)" in 3295.2501ms (afa2e885)
+2018-07-17T16:47:03.2683281+05:00 0HLFBR7B24PFT:00000001 [INF] Request finished in 3311.0779ms 200 text/plain; charset=utf-8 (791a596a)
+2018-07-17T16:47:07.0927423+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:47:07.3798006+05:00  [INF] Workflow locked "1d4e322f-2c90-4f23-9594-e81d718a0893" (88f3cf2b)
+2018-07-17T16:47:07.3838354+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:47:16.8992529+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:47:17.1785569+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:47:26.9029361+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:47:27.1675487+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:47:36.9044719+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:47:37.2201160+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:47:46.9061303+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:47:47.2062927+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:47:55.1334756+05:00 0HLFBR7B24PFT:00000002 [INF] Request starting HTTP/1.1 POST http://localhost:51342/api/v1/workflow/PublishEvent application/json 277 (ca22a1cb)
+2018-07-17T16:47:55.1789752+05:00 0HLFBR7B24PFT:00000002 [INF] Executing action method "WorkflowAPI.Controllers.WorkflowController.PublishEvent (WorkflowAPI)" with arguments (["WorkflowAPI.Models.Event"]) - ModelState is Valid (ba7f4ac2)
+2018-07-17T16:47:56.3055841+05:00 0HLFBR7B24PFT:00000002 [INF] Executing HttpStatusCodeResult, setting HTTP status code 200 (e28ccfae)
+2018-07-17T16:47:56.3119781+05:00 0HLFBR7B24PFT:00000002 [INF] Executed action "WorkflowAPI.Controllers.WorkflowController.PublishEvent (WorkflowAPI)" in 1164.4874ms (afa2e885)
+2018-07-17T16:47:56.3306161+05:00 0HLFBR7B24PFT:00000002 [INF] Request finished in 1181.6961ms 200  (791a596a)
+2018-07-17T16:47:56.9038138+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:47:57.1805864+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:47:57.4660482+05:00  [INF] Event locked dfddd1b1-904c-4648-b6c5-01c526d820a0 (2484357d)
+2018-07-17T16:48:20.9416319+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:48:21.4224575+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:48:23.1071426+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:48:23.1439139+05:00  [INF] Workflow locked "1d4e322f-2c90-4f23-9594-e81d718a0893" (88f3cf2b)
+2018-07-17T16:48:31.0307156+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:49:08.5025849+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:49:11.2639991+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T16:49:14.1808041+05:00  [INF] Workflow locked "1d4e322f-2c90-4f23-9594-e81d718a0893" (88f3cf2b)
+2018-07-17T16:49:14.9765932+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T16:49:14.9999511+05:00  [INF] Workflow locked "1d4e322f-2c90-4f23-9594-e81d718a0893" (88f3cf2b)
+2018-07-17T17:14:44.2576670+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T17:14:44.3646192+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T17:14:45.2993503+05:00  [INF] Workflow locked "1d4e322f-2c90-4f23-9594-e81d718a0893" (88f3cf2b)
+2018-07-17T17:14:54.5692890+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T17:14:54.8649475+05:00  [INF] Workflow locked "1d4e322f-2c90-4f23-9594-e81d718a0893" (88f3cf2b)
+2018-07-17T17:14:54.8672042+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T17:15:04.2627019+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T17:15:04.5634376+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T17:15:14.2641747+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T17:15:14.5473086+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T17:30:58.8495572+05:00  [INF] Starting backgroud tasks (69ed07b0)
+2018-07-17T17:30:58.8860305+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T17:30:59.7333551+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T17:30:59.8865709+05:00 0HLFBS4JEG8KT:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:51342/api/values   (ca22a1cb)
+2018-07-17T17:30:59.8865709+05:00 0HLFBS4JEG8KS:00000001 [INF] Request starting HTTP/1.1 DEBUG http://localhost:51342/  0 (ca22a1cb)
+2018-07-17T17:30:59.9449827+05:00 0HLFBS4JEG8KS:00000001 [INF] Request finished in 96.5528ms 200  (791a596a)
+2018-07-17T17:31:00.3541350+05:00 0HLFBS4JEG8KT:00000001 [INF] Request finished in 448.2506ms 404  (791a596a)
+2018-07-17T17:31:08.8798662+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T17:31:09.1986784+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T17:31:18.8742731+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T17:31:19.1399525+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T17:31:27.5012082+05:00 0HLFBS4JEG8KS:00000002 [INF] Request starting HTTP/1.1 POST http://localhost:51342/api/v1/workflow/StartWorkflow application/json 105 (ca22a1cb)
+2018-07-17T17:31:27.7929966+05:00 0HLFBS4JEG8KS:00000002 [INF] Executing action method "WorkflowAPI.Controllers.WorkflowController.StartWorkflow (WorkflowAPI)" with arguments (["WorkflowAPI.Models.Workflow"]) - ModelState is Valid (ba7f4ac2)
+2018-07-17T17:31:28.8751511+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T17:31:29.1379957+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T17:31:31.6946443+05:00 0HLFBS4JEG8KS:00000002 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2018-07-17T17:31:31.7139296+05:00 0HLFBS4JEG8KS:00000002 [INF] Executed action "WorkflowAPI.Controllers.WorkflowController.StartWorkflow (WorkflowAPI)" in 4092.4124ms (afa2e885)
+2018-07-17T17:31:31.7387684+05:00 0HLFBS4JEG8KS:00000002 [INF] Request finished in 4224.36ms 200 text/plain; charset=utf-8 (791a596a)
+2018-07-17T17:31:38.8732075+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T17:31:39.1480252+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T17:31:39.1531044+05:00  [INF] Workflow locked "53f8dd1c-6a85-4023-885e-70b698787c89" (88f3cf2b)
+2018-07-17T17:31:48.8779405+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T17:31:49.1508729+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T17:31:58.8786779+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T17:31:59.1579963+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T17:32:08.8807613+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T17:32:09.2280413+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T17:32:18.8700033+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T17:32:19.1351659+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T17:32:28.8811982+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T17:32:29.2000847+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T17:32:38.8719767+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T17:32:39.6457311+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T17:32:48.8842440+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T17:32:49.1610205+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T17:32:58.8777261+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T17:32:59.1545009+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T17:33:08.8741892+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T17:33:09.1412837+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T17:33:13.3800447+05:00 0HLFBS4JEG8KU:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:51342/api/v1/workflow/PublishEvent application/json 277 (ca22a1cb)
+2018-07-17T17:33:13.4448639+05:00 0HLFBS4JEG8KU:00000001 [INF] Executing action method "WorkflowAPI.Controllers.WorkflowController.PublishEvent (WorkflowAPI)" with arguments (["WorkflowAPI.Models.Event"]) - ModelState is Valid (ba7f4ac2)
+2018-07-17T17:33:15.6504870+05:00 0HLFBS4JEG8KU:00000001 [INF] Executing HttpStatusCodeResult, setting HTTP status code 200 (e28ccfae)
+2018-07-17T17:33:15.6530599+05:00 0HLFBS4JEG8KU:00000001 [INF] Executed action "WorkflowAPI.Controllers.WorkflowController.PublishEvent (WorkflowAPI)" in 2264.2441ms (afa2e885)
+2018-07-17T17:33:15.6561456+05:00 0HLFBS4JEG8KU:00000001 [INF] Request finished in 2275.8591ms 200  (791a596a)
+2018-07-17T17:33:18.8647001+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T17:33:19.1574228+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T17:33:19.1596719+05:00  [INF] Workflow locked "53f8dd1c-6a85-4023-885e-70b698787c89" (88f3cf2b)
+2018-07-17T17:33:19.4597465+05:00  [INF] Event locked bab33d51-47ae-4128-8f0f-aaeb4f6e07d3 (83e502c9)
+2018-07-17T17:33:30.9573085+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T17:33:41.0876479+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T17:33:41.0909768+05:00  [INF] Workflow locked "53f8dd1c-6a85-4023-885e-70b698787c89" (88f3cf2b)
+2018-07-17T17:33:52.0646215+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T17:34:02.1157309+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T17:38:53.0770714+05:00  [INF] Workflow locked "53f8dd1c-6a85-4023-885e-70b698787c89" (88f3cf2b)
+2018-07-17T17:38:53.1599749+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T17:38:55.0091747+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T17:38:55.0137456+05:00  [INF] Workflow locked "53f8dd1c-6a85-4023-885e-70b698787c89" (88f3cf2b)
+2018-07-17T17:39:03.1055465+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T21:21:20.1851038+05:00  [INF] Starting backgroud tasks (69ed07b0)
+2018-07-17T21:21:20.2444684+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T21:21:21.0286664+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T21:21:21.0396324+05:00 0HLFC05AGPLEU:00000001 [INF] Request starting HTTP/1.1 DEBUG http://localhost:51342/  0 (ca22a1cb)
+2018-07-17T21:21:21.0396325+05:00 0HLFC05AGPLEV:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:51342/api/values   (ca22a1cb)
+2018-07-17T21:21:21.1802156+05:00 0HLFC05AGPLEU:00000001 [INF] Request finished in 188.3298ms 200  (791a596a)
+2018-07-17T21:21:21.5163448+05:00 0HLFC05AGPLEV:00000001 [INF] Request finished in 544.0903ms 404  (791a596a)
+2018-07-17T21:21:46.9753059+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T21:21:47.0120440+05:00  [ERR] Workflow "SampleWorkflow" version 1 is not registered (82c53a8c)
+2018-07-17T21:21:47.0638497+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T21:21:47.2717191+05:00  [INF] Workflow locked "53f8dd1c-6a85-4023-885e-70b698787c89" (88f3cf2b)
+2018-07-17T21:21:54.8752829+05:00  [ERR] Workflow "SampleWorkflow" version 1 is not registered (82c53a8c)
+2018-07-17T21:21:58.7867644+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T21:21:58.8168556+05:00  [ERR] Workflow "SampleWorkflow" version 1 is not registered (82c53a8c)
+2018-07-17T21:21:59.0934762+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T21:21:59.0954923+05:00  [INF] Workflow locked "53f8dd1c-6a85-4023-885e-70b698787c89" (88f3cf2b)
+2018-07-17T21:22:01.9478196+05:00  [ERR] Workflow "SampleWorkflow" version 1 is not registered (82c53a8c)
+2018-07-17T21:22:04.6733682+05:00  [ERR] Workflow "SampleWorkflow" version 1 is not registered (82c53a8c)
+2018-07-17T21:22:09.2505520+05:00  [ERR] Workflow "SampleWorkflow" version 1 is not registered (82c53a8c)
+2018-07-17T21:22:09.3116253+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T21:22:09.6615814+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T21:22:09.6638884+05:00  [INF] Workflow locked "53f8dd1c-6a85-4023-885e-70b698787c89" (88f3cf2b)
+2018-07-17T21:22:11.9329204+05:00  [ERR] Workflow "SampleWorkflow" version 1 is not registered (82c53a8c)
+2018-07-17T21:22:14.7999828+05:00  [ERR] Workflow "SampleWorkflow" version 1 is not registered (82c53a8c)
+2018-07-17T21:22:17.4845798+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T21:22:17.4931091+05:00  [ERR] Workflow "SampleWorkflow" version 1 is not registered (82c53a8c)
+2018-07-17T21:22:17.8210880+05:00  [INF] Workflow locked "53f8dd1c-6a85-4023-885e-70b698787c89" (88f3cf2b)
+2018-07-17T21:22:17.8247297+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T21:23:20.8629573+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T21:23:21.8589897+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T21:23:27.4071682+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T21:23:27.4089977+05:00  [ERR] Workflow "SampleWorkflow" version 1 is not registered (82c53a8c)
+2018-07-17T21:23:31.0802291+05:00  [INF] Workflow locked "53f8dd1c-6a85-4023-885e-70b698787c89" (88f3cf2b)
+2018-07-17T21:23:31.5567420+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T21:23:31.5600131+05:00  [INF] Workflow locked "53f8dd1c-6a85-4023-885e-70b698787c89" (88f3cf2b)
+2018-07-17T21:56:58.0871790+05:00  [INF] Starting backgroud tasks (69ed07b0)
+2018-07-17T21:56:58.1579249+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T21:56:58.9005098+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T21:56:59.0872522+05:00 0HLFC0P7MB3B8:00000001 [INF] Request starting HTTP/1.1 DEBUG http://localhost:51342/  0 (ca22a1cb)
+2018-07-17T21:56:59.0872558+05:00 0HLFC0P7MB3B7:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:51342/api/values   (ca22a1cb)
+2018-07-17T21:56:59.1316883+05:00 0HLFC0P7MB3B8:00000001 [INF] Request finished in 94.1019ms 200  (791a596a)
+2018-07-17T21:56:59.4149673+05:00 0HLFC0P7MB3B7:00000001 [INF] Request finished in 330.7624ms 404  (791a596a)
+2018-07-17T21:57:08.1352925+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T21:57:08.4842798+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T21:57:18.1195047+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T21:57:18.4494613+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T21:57:24.8955708+05:00 0HLFC0P7MB3B8:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:51342/api/v1/workflow/Get   (ca22a1cb)
+2018-07-17T21:57:25.0790492+05:00 0HLFC0P7MB3B8:00000002 [INF] Executing action method "WorkflowAPI.Controllers.WorkflowController.Get (WorkflowAPI)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-07-17T21:57:25.5277086+05:00 0HLFC0P7MB3B8:00000002 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2018-07-17T21:57:25.5631094+05:00 0HLFC0P7MB3B8:00000002 [INF] Executed action "WorkflowAPI.Controllers.WorkflowController.Get (WorkflowAPI)" in 552.6767ms (afa2e885)
+2018-07-17T21:57:25.5817330+05:00 0HLFC0P7MB3B8:00000002 [INF] Request finished in 671.9151ms 200 application/json; charset=utf-8 (791a596a)
+2018-07-17T21:57:28.1208199+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T21:57:28.4394254+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T21:57:38.1234716+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T21:57:38.4776025+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T21:57:48.1255061+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T21:57:48.4581276+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T21:57:58.1213189+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T21:57:58.4472431+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T21:58:08.1252642+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T21:58:08.4626702+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T21:58:18.1256414+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T21:58:18.4632695+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T21:58:28.1194089+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T21:58:28.4400795+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T21:58:38.1183885+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T21:58:38.4303891+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T21:58:48.1242319+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T21:58:48.5239944+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T21:58:58.1204523+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T21:58:58.4413710+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T21:59:08.1215412+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T21:59:08.4441907+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T21:59:18.1262993+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T21:59:18.4433652+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T21:59:21.9898858+05:00 0HLFC0P7MB3B9:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:51342/api/v1/workflow/StartWorkflow application/json 105 (ca22a1cb)
+2018-07-17T21:59:22.1375080+05:00 0HLFC0P7MB3B9:00000001 [INF] Executing action method "WorkflowAPI.Controllers.WorkflowController.StartWorkflow (WorkflowAPI)" with arguments (["WorkflowAPI.Models.Workflow"]) - ModelState is Valid (ba7f4ac2)
+2018-07-17T21:59:25.6409830+05:00 0HLFC0P7MB3B9:00000001 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2018-07-17T21:59:25.6513503+05:00 0HLFC0P7MB3B9:00000001 [INF] Executed action "WorkflowAPI.Controllers.WorkflowController.StartWorkflow (WorkflowAPI)" in 3618.7737ms (afa2e885)
+2018-07-17T21:59:25.6731971+05:00 0HLFC0P7MB3B9:00000001 [INF] Request finished in 3668.8864ms 200 text/plain; charset=utf-8 (791a596a)
+2018-07-17T21:59:29.2121867+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T21:59:29.5451732+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T21:59:29.5469807+05:00  [INF] Workflow locked "7db00c6a-cd66-484e-bb0d-9599469eade5" (88f3cf2b)
+2018-07-17T21:59:38.1262634+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T21:59:38.4775099+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T21:59:38.5621420+05:00  [INF] Workflow locked "7db00c6a-cd66-484e-bb0d-9599469eade5" (88f3cf2b)
+2018-07-17T21:59:48.1103531+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T21:59:48.4114926+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T21:59:58.1219231+05:00  [INF] Polling for runnable workflows (51ced301)
+2018-07-17T21:59:58.4175773+05:00  [INF] Polling for unprocessed events (dda59b2b)
+2018-07-17T21:59:58.9232777+05:00 0HLFC0P7MB3B9:00000002 [INF] Request starting HTTP/1.1 POST http://localhost:51342/api/v1/workflow/PublishEvent application/json 277 (ca22a1cb)
+2018-07-17T21:59:58.9695942+05:00 0HLFC0P7MB3B9:00000002 [INF] Executing action method "WorkflowAPI.Controllers.WorkflowController.PublishEvent (WorkflowAPI)" with arguments (["WorkflowAPI.Models.Event"]) - ModelState is Valid (ba7f4ac2)
+2018-07-17T22:00:00.4747633+05:00 0HLFC0P7MB3B9:00000002 [INF] Executing HttpStatusCodeResult, setting HTTP status code 200 (e28ccfae)
+2018-07-17T22:00:00.4771321+05:00 0HLFC0P7MB3B9:00000002 [INF] Executed action "WorkflowAPI.Controllers.WorkflowController.PublishEvent (WorkflowAPI)" in 1541.5842ms (afa2e885)
+2018-07-17T22:00:00.4913465+05:00 0HLFC0P7MB3B9:00000002 [INF] Request finished in 1556.6059ms 200  (791a596a)
+2018-07-17T22:00:10.9495425+05:00  [INF] Polling for runnable workflows (51ced301)

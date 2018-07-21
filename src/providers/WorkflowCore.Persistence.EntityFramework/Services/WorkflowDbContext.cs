@@ -13,6 +13,7 @@ namespace WorkflowCore.Persistence.EntityFramework.Services
         protected abstract void ConfigureSubscriptionStorage(EntityTypeBuilder<PersistedSubscription> builder);
         protected abstract void ConfigureEventStorage(EntityTypeBuilder<PersistedEvent> builder);
         protected abstract void ConfigureRegistryStorage(EntityTypeBuilder<PersistedRegistry> builder);
+        protected abstract void ConfigureValidationStorage(EntityTypeBuilder<PersistedValidation> builder);
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -26,6 +27,7 @@ namespace WorkflowCore.Persistence.EntityFramework.Services
             var executionErrors = modelBuilder.Entity<PersistedExecutionError>();
             var extensionAttributes = modelBuilder.Entity<PersistedExtensionAttribute>();
             var registry = modelBuilder.Entity<PersistedRegistry>();
+            var validations = modelBuilder.Entity<PersistedValidation>();
 
             var subscriptions = modelBuilder.Entity<PersistedSubscription>();
             subscriptions.HasIndex(x => x.SubscriptionId).IsUnique();
@@ -45,6 +47,7 @@ namespace WorkflowCore.Persistence.EntityFramework.Services
             ConfigureSubscriptionStorage(subscriptions);
             ConfigureEventStorage(events);
             ConfigureRegistryStorage(registry);
+            ConfigureValidationStorage(validations);
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

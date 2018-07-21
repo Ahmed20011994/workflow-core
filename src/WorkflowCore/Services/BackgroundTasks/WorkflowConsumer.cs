@@ -45,6 +45,10 @@ namespace WorkflowCore.Services.BackgroundTasks
                             try
                             {
                                 result = await executor.Execute(workflow);
+                                if(!result.IsValidated)
+                                {
+                                    workflow.Status = WorkflowStatus.ValidationFailed;
+                                }
                             }
                             finally
                             {

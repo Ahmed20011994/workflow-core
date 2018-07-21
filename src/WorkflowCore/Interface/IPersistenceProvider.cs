@@ -15,6 +15,8 @@ namespace WorkflowCore.Interface
 
         Task<Workflow> RegisterWorkflow(Workflow workflow);
 
+        Task<InputValidation> PersistValidation(InputValidation validation);
+
         Task<string> FetchFlowDefinition(string workflowName);
 
         Task<List<Workflow>> FetchWorkFlows();

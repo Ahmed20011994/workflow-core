@@ -65,5 +65,11 @@ namespace WorkflowCore.Persistence.SqlServer
             builder.ToTable("Registry", "wfc");
             builder.Property(x => x.WorkflowId).UseSqlServerIdentityColumn();
         }
+
+        protected override void ConfigureValidationStorage(EntityTypeBuilder<PersistedValidation> builder)
+        {
+            builder.ToTable("Validation", "wfc");
+            builder.Property(x => x.PersistenceId).UseSqlServerIdentityColumn();
+        }
     }
 }

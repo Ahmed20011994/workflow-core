@@ -19,10 +19,11 @@ namespace WorkflowCore.Services
         protected readonly ILogger _logger;
         private readonly IExecutionResultProcessor _executionResultProcessor;
         private readonly WorkflowOptions _options;
+        private readonly IPersistenceProvider _persistenceStore;
 
         private IWorkflowHost Host => _serviceProvider.GetService<IWorkflowHost>();
 
-        public WorkflowExecutor(IWorkflowRegistry registry, IServiceProvider serviceProvider, IDateTimeProvider datetimeProvider, IExecutionResultProcessor executionResultProcessor, WorkflowOptions options, ILoggerFactory loggerFactory)
+        public WorkflowExecutor(IWorkflowRegistry registry, IServiceProvider serviceProvider, IDateTimeProvider datetimeProvider, IExecutionResultProcessor executionResultProcessor, WorkflowOptions options, ILoggerFactory loggerFactory, IPersistenceProvider persistenceStore)
         {
             _serviceProvider = serviceProvider;
             _registry = registry;
@@ -30,12 +31,14 @@ namespace WorkflowCore.Services
             _options = options;
             _logger = loggerFactory.CreateLogger<WorkflowExecutor>();
             _executionResultProcessor = executionResultProcessor;
+            _persistenceStore = persistenceStore;
         }
 
         public async Task<WorkflowExecutorResult> Execute(WorkflowInstance workflow)
 
         {
             var wfResult = new WorkflowExecutorResult();
+            wfResult.IsValidated = true;
 
             var exePointers = new List<ExecutionPointer>(workflow.ExecutionPointers.Where(x => x.Active && (!x.SleepUntil.HasValue || x.SleepUntil < _datetimeProvider.Now.ToUniversalTime())));
             var def = _registry.GetDefinition(workflow.WorkflowDefinitionId, workflow.Version);
@@ -112,6 +115,21 @@ namespace WorkflowCore.Services
                         if (result.Proceed)
                         {
                             ProcessOutputs(workflow, step, body);
+                        }
+
+                        if (step.BodyType.Name == "WaitFor" && context.ExecutionPointer.EventPublished)
+                        {
+                            var eventData = context.ExecutionPointer.EventData;
+                            var validation = await ProcessValidations(workflow, step, eventData, context.ExecutionPointer.Id);
+
+                            if(!validation) //Validation Failed
+                            {
+                                pointer.Status = PointerStatus.ValidationFailed;
+                                pointer.Active = false;
+                                pointer.EndTime = DateTime.UtcNow;
+                                workflow.Status = WorkflowStatus.ValidationFailed;
+                                wfResult.IsValidated = false;
+                            }
                         }
 
                         _executionResultProcessor.ProcessExecutionResult(workflow, def, pointer, step, result, wfResult);
@@ -221,6 +239,65 @@ namespace WorkflowCore.Services
                     }
                 }
             }
+        }
+
+        private async Task<bool> ProcessValidations(WorkflowInstance workflow, WorkflowStep step, object eventData, string stepId)
+        {
+            var Validations = step.Validations;
+            bool isvalidated = true;
+            if(Validations != null)
+            {
+                foreach (var validation in Validations)
+                {
+                    var FieldNames = validation.Fields;
+                    var DataValidations = validation.DataValidations;
+                    
+                    if(DataValidations != null)
+                    {
+                        foreach (var datavalidation in DataValidations)
+                        {
+                            if(FieldNames != null)
+                            {
+                                foreach (var fieldname in FieldNames)
+                                {
+                                    var InputValidation = new InputValidation
+                                    {
+                                        FieldName = fieldname,
+                                        ErrorCode = datavalidation.ErrorCode,
+                                        Input = string.IsNullOrEmpty(datavalidation.Input) ? string.Empty : datavalidation.Input,
+                                        ValidationName = datavalidation.Name,
+                                        StepId = stepId
+                                    };
+
+                                    if(!string.IsNullOrEmpty(datavalidation.Name))
+                                    {
+                                        MethodInfo method = typeof(Validation.Validations).GetMethod(datavalidation.Name);
+                                        dynamic result = method.Invoke(null, new object[] { InputValidation, eventData});
+
+                                        if(result != null)
+                                        {
+                                            InputValidation.FieldValue = result.FieldValue;
+                                            InputValidation.IsValid = result.IsValid;
+                                        }
+
+                                        if(!InputValidation.IsValid)
+                                        {
+                                            isvalidated = false;
+                                        }
+
+                                        await _persistenceStore.PersistValidation(InputValidation);
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+                return isvalidated;
+            }
+
+            return isvalidated;
         }
 
         private void ProcessAfterExecutionIteration(WorkflowInstance workflow, WorkflowDefinition workflowDef, WorkflowExecutorResult workflowResult)

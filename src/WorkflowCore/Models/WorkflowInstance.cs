@@ -38,6 +38,7 @@ namespace WorkflowCore.Models
         Runnable = 0, 
         Suspended = 1, 
         Complete = 2, 
-        Terminated = 3 
+        Terminated = 3,
+        ValidationFailed = 4,
     }
 }

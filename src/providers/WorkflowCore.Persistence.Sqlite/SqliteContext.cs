@@ -59,5 +59,10 @@ namespace WorkflowCore.Persistence.Sqlite
         {
             builder.ToTable("Registry");
         }
+
+        protected override void ConfigureValidationStorage(EntityTypeBuilder<PersistedValidation> builder)
+        {
+            builder.ToTable("Validation");
+        }
     }
 }

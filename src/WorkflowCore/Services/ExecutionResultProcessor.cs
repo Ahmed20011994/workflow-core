@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Extensions.Logging;
 using WorkflowCore.Interface;
@@ -47,6 +46,11 @@ namespace WorkflowCore.Services
                     EventKey = pointer.EventKey,
                     SubscribeAsOf = result.EventAsOf
                 });
+            }
+
+            if (pointer.Status == PointerStatus.ValidationFailed)
+            {
+                result.Proceed = false;
             }
 
             if (result.Proceed)

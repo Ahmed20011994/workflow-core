@@ -224,5 +224,10 @@ namespace WorkflowCore.Persistence.MongoDB.Services
         {
             throw new NotImplementedException();
         }
+
+        public Task<InputValidation> PersistValidation(InputValidation validation)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

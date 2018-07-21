@@ -132,6 +132,22 @@ namespace WorkflowCore.Persistence.EntityFramework
             return result;
         }
 
+        internal static PersistedValidation ToPersistable(this InputValidation instance)
+        {
+            PersistedValidation result = new PersistedValidation
+            {
+                FieldName = instance.FieldName,
+                FieldValue = instance.FieldValue,
+                ErrorCode = instance.ErrorCode,
+                ValidationName = instance.ValidationName,
+                IsValid = instance.IsValid,
+                StepId = instance.StepId,
+                Input = instance.Input,
+                CreationTime = DateTime.UtcNow
+            };
+            return result;
+        }
+
         internal static Workflow ToWorkflow(this PersistedRegistry instance)
         {
             Workflow result = new Workflow
@@ -141,6 +157,21 @@ namespace WorkflowCore.Persistence.EntityFramework
                 CreationTime = instance.CreationTime,
                 Definition = JsonConvert.DeserializeObject<DefinitionSourceV1>(instance.Definition),
                 Description = instance.Description
+            };
+            return result;
+        }
+
+        internal static InputValidation ToValidation(this PersistedValidation instance)
+        {
+            InputValidation result = new InputValidation
+            {
+                FieldName = instance.FieldName,
+                FieldValue = instance.FieldValue,
+                ErrorCode = instance.ErrorCode,
+                IsValid = instance.IsValid,
+                ValidationName = instance.ValidationName,
+                StepId = instance.StepId,
+                Input = instance.Input
             };
             return result;
         }

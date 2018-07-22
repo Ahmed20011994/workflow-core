@@ -21,7 +21,7 @@ namespace WorkflowCore.UnitTests
             {
                 Data = new { Value1 = 7 },
                 Description = "My Description",
-                Status = WorkflowStatus.Runnable,
+                Status = WorkflowStatus.Running,
                 NextExecution = 0,
                 Version = 1,
                 WorkflowDefinitionId = "My Workflow"
@@ -46,7 +46,7 @@ namespace WorkflowCore.UnitTests
             {
                 Data = new TestData() { Value1 = 7 },
                 Description = "My Description",
-                Status = WorkflowStatus.Runnable,
+                Status = WorkflowStatus.Running,
                 NextExecution = 0,
                 Version = 1,
                 WorkflowDefinitionId = "My Workflow"
@@ -72,7 +72,7 @@ namespace WorkflowCore.UnitTests
             {
                 Data = new TestData() { Value1 = 7 },
                 Description = "My Description",
-                Status = WorkflowStatus.Runnable,
+                Status = WorkflowStatus.Running,
                 NextExecution = 0,
                 Version = 1,
                 WorkflowDefinitionId = "My Workflow",
@@ -111,7 +111,7 @@ namespace WorkflowCore.UnitTests
                     {
                         Data = new TestData() { Value1 = 7 },
                         Description = "My Description",
-                        Status = WorkflowStatus.Runnable,
+                        Status = WorkflowStatus.Running,
                         NextExecution = 0,
                         Version = 1,
                         WorkflowDefinitionId = "My Workflow",

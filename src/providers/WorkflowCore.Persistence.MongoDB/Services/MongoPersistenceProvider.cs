@@ -102,7 +102,7 @@ namespace WorkflowCore.Persistence.MongoDB.Services
         {
             var now = asAt.ToUniversalTime().Ticks;
             var query = WorkflowInstances
-                .Find(x => x.NextExecution.HasValue && (x.NextExecution <= now) && (x.Status == WorkflowStatus.Runnable))
+                .Find(x => x.NextExecution.HasValue && (x.NextExecution <= now) && (x.Status == WorkflowStatus.Running))
                 .Project(x => x.Id);
 
             return await query.ToListAsync();

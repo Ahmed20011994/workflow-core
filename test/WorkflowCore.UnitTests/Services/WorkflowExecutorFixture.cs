@@ -59,7 +59,7 @@ namespace WorkflowCore.UnitTests.Services
             {
                 WorkflowDefinitionId = "Workflow",
                 Version = 1,
-                Status = WorkflowStatus.Runnable,
+                Status = WorkflowStatus.Running,
                 NextExecution = 0,
                 Id = "001",
                 ExecutionPointers = new List<ExecutionPointer>()
@@ -89,7 +89,7 @@ namespace WorkflowCore.UnitTests.Services
             {
                 WorkflowDefinitionId = "Workflow",
                 Version = 1,
-                Status = WorkflowStatus.Runnable,
+                Status = WorkflowStatus.Running,
                 NextExecution = 0,
                 Id = "001",
                 ExecutionPointers = new List<ExecutionPointer>()
@@ -120,7 +120,7 @@ namespace WorkflowCore.UnitTests.Services
             {
                 WorkflowDefinitionId = "Workflow",
                 Version = 1,
-                Status = WorkflowStatus.Runnable,
+                Status = WorkflowStatus.Running,
                 NextExecution = 0,
                 Id = "001",
                 ExecutionPointers = new List<ExecutionPointer>()
@@ -161,7 +161,7 @@ namespace WorkflowCore.UnitTests.Services
             {
                 WorkflowDefinitionId = "Workflow",
                 Version = 1,
-                Status = WorkflowStatus.Runnable,
+                Status = WorkflowStatus.Running,
                 NextExecution = 0,
                 Id = "001",
                 Data = new DataClass() { Value1 = 5 },
@@ -206,7 +206,7 @@ namespace WorkflowCore.UnitTests.Services
             {
                 WorkflowDefinitionId = "Workflow",
                 Version = 1,
-                Status = WorkflowStatus.Runnable,
+                Status = WorkflowStatus.Running,
                 NextExecution = 0,
                 Id = "001",
                 Data = data,
@@ -236,7 +236,7 @@ namespace WorkflowCore.UnitTests.Services
             {
                 WorkflowDefinitionId = "Workflow",
                 Version = 1,
-                Status = WorkflowStatus.Runnable,
+                Status = WorkflowStatus.Running,
                 NextExecution = 0,
                 Id = "001",
                 ExecutionPointers = new List<ExecutionPointer>()
@@ -267,7 +267,7 @@ namespace WorkflowCore.UnitTests.Services
             {
                 WorkflowDefinitionId = "Workflow",
                 Version = 1,
-                Status = WorkflowStatus.Runnable,
+                Status = WorkflowStatus.Running,
                 NextExecution = 0,
                 Id = "001",
                 ExecutionPointers = new List<ExecutionPointer>()

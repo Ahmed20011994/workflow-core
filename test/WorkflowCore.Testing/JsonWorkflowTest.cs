@@ -64,7 +64,7 @@ namespace WorkflowCore.Testing
         {
             var status = GetStatus(workflowId);
             var counter = 0;
-            while ((status == WorkflowStatus.Runnable) && (counter < (timeOut.TotalMilliseconds / 100)))
+            while ((status == WorkflowStatus.Running) && (counter < (timeOut.TotalMilliseconds / 100)))
             {
                 Thread.Sleep(100);
                 counter++;

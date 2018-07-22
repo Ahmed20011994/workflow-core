@@ -191,7 +191,7 @@ namespace WorkflowCore.UnitTests.Services
         {
             return new WorkflowInstance
             {
-                Status = WorkflowStatus.Runnable,
+                Status = WorkflowStatus.Running,
                 ExecutionPointers = new List<ExecutionPointer>()
                 {
                     pointer

@@ -64,7 +64,7 @@ namespace WorkflowCore.IntegrationTests.Scenarios
             var workflowId = Host.StartWorkflow("OutcomeFork").Result;
             var instance = PersistenceProvider.GetWorkflowInstance(workflowId).Result;
             int counter = 0;
-            while ((instance.Status == WorkflowStatus.Runnable) && (counter < 300))
+            while ((instance.Status == WorkflowStatus.Running) && (counter < 300))
             {
                 System.Threading.Thread.Sleep(100);
                 counter++;

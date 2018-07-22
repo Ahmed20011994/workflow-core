@@ -39,7 +39,7 @@ namespace WorkflowCore.Services.BackgroundTasks
                     {
                         cancellationToken.ThrowIfCancellationRequested();
                         workflow = await persistenceStore.GetWorkflowInstance(itemId);
-                        if (workflow.Status == WorkflowStatus.Runnable)
+                        if (workflow.Status == WorkflowStatus.Running)
                         {
                             var executor = _executorPool.Get();
                             try
@@ -71,7 +71,7 @@ namespace WorkflowCore.Services.BackgroundTasks
 
                             var readAheadTicks = _datetimeProvider.Now.Add(Options.PollInterval).ToUniversalTime().Ticks;
 
-                            if ((workflow.Status == WorkflowStatus.Runnable) && workflow.NextExecution.HasValue && workflow.NextExecution.Value < readAheadTicks)
+                            if ((workflow.Status == WorkflowStatus.Running) && workflow.NextExecution.HasValue && workflow.NextExecution.Value < readAheadTicks)
                             {
                                 new Task(() => FutureQueue(workflow, cancellationToken)).Start();
                             }

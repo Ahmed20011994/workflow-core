@@ -65,7 +65,7 @@ namespace WorkflowCore.Services
                 Creators = def.Creators,
                 NextExecution = 0,
                 CreateTime = DateTime.Now.ToUniversalTime(),
-                Status = WorkflowStatus.Runnable
+                Status = WorkflowStatus.Running
             };
 
             if ((def.DataType != null) && (data == null))
@@ -107,7 +107,7 @@ namespace WorkflowCore.Services
             try
             {
                 var wf = await _persistenceStore.GetWorkflowInstance(workflowId);
-                if (wf.Status == WorkflowStatus.Runnable)
+                if (wf.Status == WorkflowStatus.Running)
                 {
                     wf.Status = WorkflowStatus.Suspended;
                     await _persistenceStore.PersistWorkflow(wf);
@@ -135,7 +135,7 @@ namespace WorkflowCore.Services
                 var wf = await _persistenceStore.GetWorkflowInstance(workflowId);
                 if (wf.Status == WorkflowStatus.Suspended)
                 {
-                    wf.Status = WorkflowStatus.Runnable;
+                    wf.Status = WorkflowStatus.Running;
                     await _persistenceStore.PersistWorkflow(wf);
                     requeue = true;
                     return true;

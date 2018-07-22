@@ -4,7 +4,7 @@ namespace WorkflowCore.Models
 {
     public class Event
     {
-        public string Id { get; set; }        
+        public string Id { get; set; }
 
         public string EventName { get; set; }
 

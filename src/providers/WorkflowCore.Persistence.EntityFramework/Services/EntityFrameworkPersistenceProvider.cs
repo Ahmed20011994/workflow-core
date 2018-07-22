@@ -107,7 +107,7 @@ namespace WorkflowCore.Persistence.EntityFramework.Services
             {
                 var now = asAt.ToUniversalTime().Ticks;
                 var raw = await db.Set<PersistedWorkflow>()
-                    .Where(x => x.NextExecution.HasValue && (x.NextExecution <= now) && (x.Status == WorkflowStatus.Runnable))
+                    .Where(x => x.NextExecution.HasValue && (x.NextExecution <= now) && (x.Status == WorkflowStatus.Running))
                     .Select(x => x.InstanceId)
                     .ToListAsync();
 
